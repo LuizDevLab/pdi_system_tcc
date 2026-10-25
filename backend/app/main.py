@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from app import models  # noqa: F401  (registra as tabelas em Base.metadata)
 from app.config import CORS_ORIGINS, JWT_SECRET
 from app.db import Base, get_engine
-from app.routers import auth, dev_tests
+from app.routers import auth, dev_tests, evaluations
 
 MIN_JWT_SECRET_LEN = 32
 
@@ -38,4 +38,5 @@ app.add_middleware(
 )
 
 app.include_router(auth.router)
+app.include_router(evaluations.router)
 app.include_router(dev_tests.router)  # TODO(remover)
