@@ -142,6 +142,14 @@ Valores conferidos à mão: cosseno de vetores idênticos = 1; ortogonais = 0; `
 - Rode os testes após mexer em `engine.py`.
 - Ao terminar, resuma em até 5 linhas: o que foi feito, o que falta e como testar.
 - Marque qualquer decisão incerta com `# TODO(confirmar)` em vez de inventar.
+- Toda rota nova usa `get_consented_user`; `get_user_no_consent` só para `/me` e `/me/consent`. Toda rota valida papel e escopo no back-end.
+
+## Pendências de segurança
+
+- Fases 4 e 5: o colaborador nunca recebe as notas individuais do gestor, só o consolidado e as lacunas; criar teste que prove isso.
+- Fase 6: normalizar e-mails com `strip().lower()` no cadastro e edição.
+- Fase 7: remover `routers/dev_tests.py` e migrar os testes para rotas reais; desligar `/docs`, `/redoc` e `/openapi.json` em produção (`ENV=prod`).
+- Antes do dia real: redefinir todas as senhas temporárias.
 
 ## Fora de escopo (não construir)
 

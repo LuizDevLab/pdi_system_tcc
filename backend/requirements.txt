@@ -2,3 +2,9 @@ sqlalchemy>=2.0,<3
 psycopg2-binary
 bcrypt
 python-dotenv
+fastapi
+uvicorn
+pydantic>=2
+pyjwt
+pytest
+httpx
