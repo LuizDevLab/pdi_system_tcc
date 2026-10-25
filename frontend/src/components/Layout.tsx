@@ -13,6 +13,11 @@ export default function Layout({ children }: { children: ReactNode }) {
             Sistema de PDI
           </Link>
           <div className="flex items-center gap-3 text-sm">
+            {user?.is_participant && (
+              <Link to="/meu-pdi" className="text-indigo-700 hover:underline">
+                Meu PDI
+              </Link>
+            )}
             <span className="hidden text-slate-600 sm:inline">{user?.name}</span>
             <button
               onClick={() => {

@@ -6,6 +6,7 @@ import Consent from './pages/Consent'
 import Evaluation from './pages/Evaluation'
 import Login from './pages/Login'
 import MyEvaluations from './pages/MyEvaluations'
+import MyPdi from './pages/MyPdi'
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route element={<RequireAuth />}>
             <Route path="/minhas-avaliacoes" element={<MyEvaluations />} />
             <Route path="/avaliacao/:linkId" element={<Evaluation />} />
+            <Route path="/meu-pdi" element={<MyPdi />} />
           </Route>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

@@ -111,3 +111,34 @@ export const submitEvaluation = (id: number, scores: ScoreItem[], development_in
     method: 'POST',
     body: JSON.stringify({ scores, development_input }),
   })
+
+export interface PdiCompetency {
+  code: string
+  name: string
+  consolidated: number
+  expected: number
+  gap: number
+}
+
+export interface PdiItem {
+  rank: number
+  code: string
+  name: string
+  gap: number
+  timeframe: string | null
+  action: { title: string; type: string; description: string } | null
+}
+
+export interface Pdi {
+  user_id: number
+  user_name: string
+  cargo: string | null
+  generated_at: string
+  cosine: number
+  jaccard: number
+  reference_provisional: boolean
+  competencies: PdiCompetency[]
+  items: PdiItem[]
+}
+
+export const getPdi = (userId: number) => request<Pdi>(`/pdi/${userId}`)
